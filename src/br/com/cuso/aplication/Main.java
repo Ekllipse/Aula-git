@@ -15,12 +15,12 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Quantos funcionarios tem na sua empresa?");
-		int qtdFunc = sc.nextInt();
-		List<Funcionario> listFunc = new ArrayList<>();
-		double aumento;
-		Funcionario func;
+		int qtdFunc = sc.nextInt(); // pega a quantidade de funcionarios que será adicionada
+		List<Funcionario> listFunc = new ArrayList<>();// cria lista de funcionarios
+		double aumento;// Variavel que sera preenchida com o total do aumento	
+		Funcionario func; 
 
-		for (int i = 0; i < qtdFunc; i++) {
+		for (int i = 0; i < qtdFunc; i++) {// cadastro dos funcionarios
 			System.out.println("Digite os dados do funcionario:\nID:");
 			int id = sc.nextInt();
 			System.out.println("Nome:");
@@ -29,14 +29,14 @@ public class Main {
 			System.out.println("Salario:");
 			double salary = sc.nextDouble();
 
-			func = new Funcionario(id, name, salary);
-			listFunc.add(func);
+			func = new Funcionario(id, name, salary);// instanciando um funcionario
+			listFunc.add(func);// adiciona funcionario na lista
 		}
 
 		System.out.println("Digite o ID do funcionario que vai receber aumento:");
 		qtdFunc = sc.nextInt();
 
-		Integer idSalary = posicao(listFunc, qtdFunc);
+		Integer idSalary = posicao(listFunc, qtdFunc);// função criada para retornar o funcionario que vai receber o aumento
 
 		if (idSalary != null) {
 
